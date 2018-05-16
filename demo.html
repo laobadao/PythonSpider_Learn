@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<title>Jack Cui | 关注人工智能及互联网的个人博客</title>
+<meta name="description" content="Jack Cui博客是关注互联网以及分享人工智能相关知识的个人博客，主要涵盖了网络爬虫、机器学习、深度学习等经验教程。我的博客宗旨：把最实用的经验，分享给最需要的读者，希望每一个来访的朋友都能有所收获！" />
+<meta name="keywords" content="Jack Cui,崔家华,个人博客,人工智能,机器学习,深度学习,网络爬虫,算法基础,数据结构,算法工程师" />
+<link rel="shortcut icon" href="http://cuijiahua.com/wp-content/uploads/2018/01/favicon-1.ico">
+<link rel="apple-touch-icon" sizes="114x114" href="http://cuijiahua.com/wp-content/uploads/2018/01/logo-s-1.png" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://cuijiahua.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://cuijiahua.com/wp-content/themes/begin/js/html5.js"></script>
+<script src="http://cuijiahua.com/wp-content/themes/begin/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<link rel='stylesheet' id='crayon-css'  href='http://cuijiahua.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='http://cuijiahua.com/wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='http://cuijiahua.com/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='begin-style-css'  href='http://cuijiahua.com/wp-content/themes/begin/style.css?ver=LTS' type='text/css' media='all' />
+<link rel='stylesheet' id='fonts-css'  href='http://cuijiahua.com/wp-content/themes/begin/css/fonts/fonts.css?ver=10/01/2018' type='text/css' media='all' />
+<link rel='stylesheet' id='iconfontd-css'  href='https://at.alicdn.com/t/font_463487_gbinhkz6qofj38fr.css?ver=10/01/2018' type='text/css' media='all' />
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/jquery.min.js?ver=1.10.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/cuijiahua.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta'></script>
+<style>#content, .header-sub, .top-nav, #top-menu, #mobile-nav, #main-search, #search-main, .breadcrumb, .footer-widget, .links-box, .g-col, .links-group #links, .menu-img {width: 1210px;}@media screen and (max-width: 1210px) {#content, .breadcrumb, .footer-widget, .links-box, #top-menu, .top-nav, #main-search, #search-main, #mobile-nav, .header-sub, .breadcrumb, .g-col, .links-group #links, .menu-img {width: 98%;}}</style><style>.slider-caption, .header-sub h1 {background: #4ba5d8;}.callbacks_tabs .callbacks_here a {background: #4ba5d8;border: 1px solid #4ba5d8}.callbacks_nav{color: #4ba5d8;}.thumbnail .cat, .format-img-cat, .title-l, .des-t, .des-p {background: #4ba5d8;}</style><style>#commentform textarea {background-image:url(http://www.cuijiahua.com/wp-content/uploads/2017/11/comment.png);background-repeat:no-repeat;background-position:center;}
+
+/*闪烁特效*/
+/*#menu-item-915,#menu-item-2948 a .zm {
+    animation: blink 1s linear infinite;
+}*/
+
+/*右移*/
+.list-title a,.widget.like_most_img ul li a,.widget.hot_post_img ul li a,.widget.recent_comments ul li a,.widget.hot_comment ul li a,.widget.new_cat ul li a,.widget.related_post ul li a{position:relative;}
+
+/** 鼠标样式 开始**/
+/** 普通指针样式**/
+body {
+cursor: url(http://cuijiahua.com/wp-content/uploads/2018/01/default.cur), default;
+}
+/** 链接指针样式**/
+a:hover{cursor:url(http://cuijiahua.com/wp-content/uploads/2018/01/link.cur), pointer;}
+/** 鼠标样式 结束**/
+
+/*评论地址显示*/
+.WB-OS img {
+    width: 14px;
+    height: auto;
+    vertical-align: -6%;
+}
+.flags {
+    display: none;
+}
+@media screen and (min-width: 900px) {
+    .comment-body:hover .flags {
+        display: inline;
+        animation: fade-in;
+        animation-duration: 0.3s;
+        -webkit-animation: fade-in 0.3s;
+    }
+}
+
+/** 头像旋转**/
+/*.vcard .avatar {
+    box-shadow:0px 0px 1px;
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin: 6px 10px 0 0;
+    padding: 2px;
+    border: 1px solid #ddd;
+    transition: all 0.8s ease 0s;
+    -webkit-transition: all 0.8s ease 0s;
+    -moz-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
+    -ms-transition: 0.8s;
+}
+.vcard:hover .avatar {
+    box-shadow:0px 0px 10px #0c0;
+    transform: rotate(720deg);
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    border-radius:40px!important;
+    filter:alpha(opacity=100)!important;
+    opacity:1!important;
+}*/
+
+/** 喜欢分享 **/
+#social {
+    position: relative;
+    margin: 50px auto;
+}
+.social-main {
+    position: relative;
+    margin: 0 auto;
+    width: 243px;
+}
+.social-main span {
+    float: left;
+}
+.social-main a {
+    color: #fff;
+    line-height: 36px;
+    border-radius: 40px;
+}
+.share-s a, .shang-s a {
+    text-align: center;
+}
+.like a {
+    float: left;
+    padding-left: 15px;
+}
+.social-main a:hover {
+    background: #696969;
+    color: #fff;
+    transition: all 0.2s ease-in 0s;
+}
+.like a {
+    background: #FF0000;
+    width: 120px;
+    display: block;
+    border: 1px solid #ddd;
+}
+.share-s a {
+    background: #0000FF;
+    width: 120px;
+    display: block;
+    padding-left: 15px;
+    border: 1px solid #ddd;
+}
+.social-main i {
+    color: #fff;
+    margin: 0 5px 0 0;
+}
+/** 赏 **/
+.shang-empty {
+    position: absolute;
+    left: 90px;
+    top: 0px;
+    width: 62px;
+    height: 38px;
+    overflow: hidden;
+}
+.shang-empty span {
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: -10px 0 0 0;
+    border-radius: 60px;
+    border: 1px solid #ddd;
+}
+.shang-p a {
+    position: absolute;
+    background: #ffab2e;
+    left: 96px;
+    top: -5px;
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 45px;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    left: 101px9;
+    top: 09;
+    width: 38px9;
+    height: 38px9;
+    line-height: 35px9;
+}
+.shang-s {
+    height: 37px;
+}
+#shang {
+    width: 280px;
+    display: block;
+}
+.shang-img {
+    float: left;
+}
+.shang-img img {
+    width: 140px;
+    height: auto;
+}
+.shang-main h4 {
+    font-size: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.shang-main i {
+    color: #ff0000;
+}
+/** 分享 **/
+#share {
+    position: absolute;
+    top: -60px;
+    rightright: -29px;
+    width: 302px;
+    height: 68px;
+    display: none;
+    z-index: 999;
+}
+#share a {
+    float: left;
+    background: #999;
+    font-size: 20px
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 4px;
+    padding-left: 0;
+    text-align: center;
+    border-radius: 20px;
+    background: rgba(128, 128, 128, 0.9);
+}
+#share .be-addbox {
+    color: #7ab951;
+    border: 1px solid #7ab951;
+    background: #fff;
+}
+#share .be-addbox:hover {
+    background: #7ab951 !important;
+    color: #fff !important;
+}
+#share .be-qzone {
+    color: #ff7400;
+    border: 1px solid #ff7400;
+    background: #fff;
+}
+#share .be-qzone:hover {
+    background: #ff7400 !important;
+    color: #fff !important;
+}
+#share .be-stsina {
+    color: red;
+    border: 1px solid red;
+    background: #fff;
+}
+#share .be-stsina:hover {
+    background: #ff0000 !important;
+    color: #fff !important;
+}
+#share .be-tqq {
+    color: #46c0e6;
+    border: 1px solid #46c0e6;
+    background: #fff;
+}
+#share .be-tqq:hover {
+    background: #46c0e6 !important;
+    color: #fff !important;
+}
+#share .be-renren {
+    color: #3b68ac;
+    border: 1px solid #3b68ac;
+    background: #fff;
+}
+#share .be-renren:hover {
+    background: #3b68ac !important;
+    color: #fff !important;
+}
+#share .be-weixin {
+    color: #006f1d;
+    border: 1px solid #006f1d;
+    background: #fff;
+}
+#share .be-weixin:hover {
+    background: #00ff43 !important;
+    color: #fff !important;
+}
+.bd_weixin_popup {
+    height: 250px !important;
+}
+.bd_weixin_popup_foot {
+    display: none;
+}
+
+/*右侧滚动条美化*/  
+#scroll{width:32px;float:rightright;position:fixed;rightright:10px;bottombottom:50px;z-index:9999;}#scroll li a{font-size:16px;color:#fff;width:32px;height:32px;line-height:28px;text-align:center;vertical-align:middle;margin-top:4px;display:block;cursor:pointer;border:1px solid #ddd;border-radius:15px;box-shadow:0 1px 1px rgba(0,0,0,0.04);}#scroll li a:hover{background:#2f889a;color:#fff;border:1px solid #2f889a;transition:all .2s ease-in 0s;}.scroll-h{background-color:#ff5e5c !important;}.scroll-home{background-color:#9f35ff !important;}.scroll-c{background-color:#24a5db !important;}.scroll-b{background-color:#ff9531 !important;}#gb2big5{background-color:#aec534 !important;}.qr{background-color:#4a4a4a !important;}.qqonline a{background:#39c!important;}@media screen and (min-width:900px){#scroll li a:hover{background:#2f889a;color:#fff;border:1px solid #2f889a;transition:all 0.2s ease-in 0s;}}.qr-img{position:fixed;background:#fff;bottombottom:50px;rightright:50px;max-width:300px;z-index:9999;display:none;border-radius:4px;padding:10px 10px 2px 10px;animation:fade-in;animation-duration:0.5s;-webkit-animation:fade-in 0.5s;border:1px solid #ddd;box-shadow:0 1px 1px rgba(0,0,0,0.05);}#output img{position:absolute;top:72px;rightright:72px;width:25px;height:25px;}.qr .fa-qrcode{font-size:20px !important;line-height:32px !important;}.qr-img .arrow{position:absolute;font-size:26px;bottombottom:2px;}.arrow-y{color:#fff;rightright:-8px;}.arrow-z{color:#c6c6c6;rightright:-9px;}#output td{border:none;}#output td{padding:0;}.page-template-template-blog #scroll li a.scroll-c,.page-template-template-code #scroll li a.scroll-c,.page-template-template-links #scroll li a.scroll-c,.page-template-template-archives #scroll li a.scroll-c,.page-template-template-cms #scroll li a.scroll-c,.page-template-template-hot #scroll li a.scroll-c,.page-template-template-tag #scroll li a.scroll-c,.page-template-template-tougao #scroll li a.scroll-c,.page-template-template-contact #scroll li a.scroll-c,.page-template-template-message #scroll li a.scroll-c,.page-template-template-baidu #scroll li a.scroll-c{display:none;}  
+
+/*背景*/
+body {background: url('http://cuijiahua.com/wp-content/uploads/2018/01/bg_1.png') repeat top left scroll;}
+
+/*顶部导航样式*/
+/*#top-header{background:#333d46;border-bottom:1px solid #333d46}.top-menu a{color:#FFF}.top-menu a:hover{color:#daf9fa}#user-profile,#user-profile a{float:left;color:#FFF}*/
+
+/*幻灯片缩略图修改*/
+#slideshow #slider img{border-radius:5px;border:0}
+.thumbnail{border-radius:5px;border:0}
+
+/*链接样式修改*/
+.link-f a{background:#fff;text-align:center;padding:5px;display:block;white-space:nowrap;word-wrap:normal;text-overflow:ellipsis;overflow:hidden;border:1px solid #ddd;border-radius:20px;transition-duration:.5s;box-shadow:0 1px 1px rgba(0,0,0,.04)}
+.link-f a:hover{background:#4ba5d8;color:#fff !important;transition:all .1s ease-in 0s}
+
+/*侧边栏特效*/
+.tao-box:hover,.widget.tao_widget:hover,.widget.advert:hover,.widget.like_most_img:hover,.widget.about:hover,.widget.hot_comment:hover,.widget.recent_comments:hover,.widget.cx_tag_cloud:hover,.widget.hot_post_img:hover,.widget.img_cat:hover,#custom_html-8:hover,#custom_html-10:hover,#custom_html-11:hover,.sites.sites-all:hover,.cat-box:hover,.picture-h:hover,.tab-site:hover,.tao-h:hover{box-shadow:0 0 20px 3px #dfe9f7;border:1px solid #eaeaea;z-index:2}
+
+/*widget选中特效*/
+#sidebar.widget-title .title-i{margin:0 10px 0 16px;padding:7px 0 0 0}.widget-title:hover .title-i-t{background:#3690cf;transition:background .3s ease}.title-i{width:18px;height:18px}.title-i span{width:7px;height:7px}
+
+/*阅读全文*/
+.entry-more a{border-radius:15px 0 0 15px;border:0px solid #ddd;position:absolute;width:82px;right:-80px;webkit-transition:all .4s;-moz-transition:all .4s;-o-transition:all .4s;transition:all .4s;opacity:0;color:#fff;background:#028ad8}
+.entry-more a:hover{color:#fff;background:#595959}
+.post{overflow:hidden;-webkit-transition:.3s;-moz-transition:.3s;-o-transition:.3s;-ms-transition:.3s}
+.post:hover .entry-more a{right:0;opacity:.7}
+
+/*评论列表层次缩小*/
+.comment-list .depth-1,.comment-list .depth-2,.comment-list .depth-3,.comment-list .depth-4,.comment-list .depth-5{position:relative;background:#fff;margin:0 0 10px 0;padding:8px 15px;border:1px solid #eaeaea;box-shadow:0 1px 1px rgba(0,0,0,0.04);border-radius:2px;word-wrap:break-word;word-break:break-all}@media screen and (max-width:620px){.authorbio .spostinfo .i-time{display:none}}
+
+/*导航美化*/
+#site-nav .down-menu>#menu-item-30>a:hover .font-text,#site-nav .down-menu>#menu-item-30>li.sfHover>a .font-text{background:#992e1e !important}#site-nav .down-menu a{color:#444;margin:0}#site-nav .down-menu a{height:88px;line-height:88px;border-bottom:0 solid #3690cf;transition-duration:.6s}#site-nav .down-menu>.current-menu-item>a{height:88px;line-height:88px;border-bottom:2px solid #3690cf}#site-nav .down-menu>li>a:hover{height:88px;border-bottom:88px solid #333d46}#site-nav .down-menu>
+
+/** 问候语样式 **/
+#user-profile {
+	position: relative;
+	margin: 0 0 0 10px;
+	width: 45%;
+}
+
+/*表格样式*/
+table {
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+}
+table tr {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+table th, table td {
+    padding: 10px;
+    text-align: center;
+}
+table th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+@media screen and (max-width: 900px) {
+    table {
+        border: 0;
+    }
+    table thead {
+        display: none;
+    }
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+    table td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+    table td:last-child {
+        border-bottom: 0;
+    }
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}</style><script src="//msite.baidu.com/sdk/c.js?appid=1583569488499460"></script></head>
+<body class="home blog">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header">
+		<div id="header-main" class="header-main">
+			<nav id="top-header">
+			<div class="top-nav">
+									<div id="user-profile">
+					<div class="user-login"><a href="http://cuijiahua.com/register.html" target="_blank"><i class="be be-personoutline"></i>注册</a></div>
+			
+						<div class="nav-set">
+			 	<div class="nav-login">
+			 					<a href="#login" class="flatbtn" id="login-main" ><i class="be be-timerauto"></i>登录</a>
+								</div>
+			</div>
+				<script type="text/javascript">today = new Date();
+					var day;
+					var date;
+					var hello;
+					hour = new Date().getHours();
+					if (hour < 6) {
+						hello = '凌晨好！';
+					} else if (hour < 9) {
+						hello = '早上好！';
+					} else if (hour < 12) {
+						hello = '上午好！';
+					} else if (hour < 14) {
+						hello = '中午好！';
+					} else if (hour < 17) {
+						hello = '下午好！';
+					} else if (hour < 19) {
+						hello = '傍晚好！';
+					} else if (hour < 22) {
+						hello = '晚上好！';
+					} else {
+						hello = '夜深了！ ';
+					}
+					function GetCookie(sName) {
+						var arr = document.cookie.match(new RegExp("(^| )" + sName + "=([^;]*)(;|$)"));
+						if (arr != null) {
+							return unescape(arr[2])
+						};
+						return null;
+					}
+					var Guest_Name = decodeURIComponent(GetCookie('author'));
+					var webUrl = webUrl;
+					if (Guest_Name != "null") {
+						hello = Guest_Name + ' , ' + hello + ' 欢迎回来。';
+					}
+					document.write(' ' + hello);</script>
+					<script type="text/javascript">var d, s = "";
+					var x = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+					d = new Date();
+					s += d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日 ";
+					s += x[d.getDay()];
+					document.writeln(s);
+			</script>
+					<div class="clear"></div>
+</div>
+				
+				<div class="menu-%e9%a1%b6%e7%ba%a7%e8%8f%9c%e5%8d%95-container"><ul id="menu-%e9%a1%b6%e7%ba%a7%e8%8f%9c%e5%8d%95" class="top-menu"><li id="menu-item-2053" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2053"><a target="_blank" href="http://cuijiahua.com/blog/notice/website_notice/"><i class="zm zm-gonggao"></i><span class="font-text">网站公告</span></a></li>
+<li id="menu-item-890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-890"><a target="_blank" href="http://cuijiahua.com/achieves.html"><i class="zm zm-guidang"></i><span class="font-text">文章归档</span></a></li>
+<li id="menu-item-2204" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2204"><a target="_blank" href="http://cuijiahua.com/collections.html"><i class="zm zm-shoucang"></i><span class="font-text">网址收藏</span></a></li>
+<li id="menu-item-2948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2948"><a target="_blank" href="http://cuijiahua.com/sponsor.html"><i class="zm zm-aixinxindiantu"></i><span class="font-text">赞助本站</span></a></li>
+</ul></div>			</div>
+		</nav><!-- #top-header -->
+
+		<div id="menu-box">
+			<div id="top-menu">
+				<span class="nav-search"></span>
+															<span class="mobile-login"><a href="#login" id="login-mobile" ><i class="be be-timerauto"></i></a></span>
+																	<div class="logo-sites">
+																							<a href="http://cuijiahua.com/"><span class="logo-small"><img src="http://cuijiahua.com/wp-content/uploads/2018/01/logo-s-1.png" /></span></a>							<h1 class="site-title"><a href="http://cuijiahua.com/" title="Jack Cui" rel="home">Jack Cui</a></h1>
+															<p class="site-description">分享技术 乐享生活</p>
+																							</div><!-- .logo-site -->
+
+				<div id="site-nav-wrap">
+					<div id="sidr-close"><a href="#sidr-close" class="toggle-sidr-close">×</a></div>
+					<div id="sidr-menu"><div class="toggle-sidr-menu">MENU</a></div></div>
+					<nav id="site-nav" class="main-nav">
+																		<a href="#sidr-main" id="navigation-toggle" class="bars"><i class="be be-menu"></i></a>
+																	<div class="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-container"><ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa" class="down-menu nav-menu"><li id="menu-item-740" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-740"><a href="http://cuijiahua.com"><i class="zm zm-home"></i><span class="font-text">网站首页</span></a></li>
+<li id="menu-item-3039" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-3039"><a href="http://cuijiahua.com/blog/technique/"><i class="zm zm-skill"></i><span class="font-text">技术分享</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-734" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-734"><a href="http://cuijiahua.com/blog/ml/"><i class="zm zm-jiqixuexi"></i><span class="font-text">机器学习</span></a></li>
+	<li id="menu-item-1998" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1998"><a href="http://cuijiahua.com/blog/dl/"><i class="zm zm-shenduxuexi"></i><span class="font-text">深度学习</span></a></li>
+	<li id="menu-item-735" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-735"><a href="http://cuijiahua.com/blog/spider/"><i class="zm zm-spider"></i><span class="font-text">网络爬虫</span></a></li>
+	<li id="menu-item-733" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-733"><a href="http://cuijiahua.com/blog/website/"><i class="zm zm-wordpress"></i><span class="font-text">网站建设</span></a></li>
+	<li id="menu-item-3159" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3159"><a href="http://cuijiahua.com/blog/trick/"><i class="zm zm-rocket"></i><span class="font-text">小把戏录</span></a></li>
+	<li id="menu-item-2042" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2042"><a href="http://cuijiahua.com/blog/learing-algorithm/"><i class="zm zm-code"></i><span class="font-text">算法学习</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-2043" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2043"><a href="http://cuijiahua.com/blog/algorithm/algorithm/">算法基础</a></li>
+		<li id="menu-item-1613" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1613"><a href="http://cuijiahua.com/blog/learing-algorithm/basis/">剑指Offer</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-732" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-732"><a href="http://cuijiahua.com/blog/life/"><i class="zm zm-shenghuo"></i><span class="font-text">程序生活</span></a></li>
+<li id="menu-item-915" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-915"><a target="_blank" href="http://cuijiahua.com/liuyan.html"><i class="zm zm-plumage"></i><span class="font-text">给我留言</span></a></li>
+<li id="menu-item-3037" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3037"><a href="#"><i class="be be-star"></i><span class="font-text">共享资源</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-1012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1012"><a target="_blank" href="http://cuijiahua.com/resource.html"><i class="zm zm-networks"></i><span class="font-text">网络资源</span></a></li>
+	<li id="menu-item-3047" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3047"><a target="_blank" href="http://cuijiahua.com/goods.html"><i class="zm zm-book"></i><span class="font-text">推荐书籍</span></a></li>
+</ul>
+</li>
+<li id="menu-item-2302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2302"><a href="#"><i class="zm zm-yule"></i><span class="font-text">休闲娱乐</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-2303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2303"><a target="_blank" href="http://cuijiahua.com/video/"><i class="zm zm-shipin"></i><span class="font-text">视频解析</span></a></li>
+	<li id="menu-item-2907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2907"><a target="_blank" href="http://cuijiahua.com/wallpaper/"><i class="zm zm-photo"></i><span class="font-text">电脑壁纸</span></a></li>
+</ul>
+</li>
+<li id="menu-item-2306" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2306"><a href="#"><i class="zm zm-about"></i><span class="font-text">关于</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-2035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2035"><a href="http://cuijiahua.com/about.html">博客简介</a></li>
+	<li id="menu-item-2034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2034"><a target="_blank" rel="nofollow" href="https://github.com/Jack-Cherish">Github</a></li>
+	<li id="menu-item-2033" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2033"><a target="_blank" rel="nofollow" href="http://blog.csdn.net/c406495762">CSDN</a></li>
+	<li id="menu-item-2032" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2032"><a target="_blank" rel="nofollow" href="https://www.zhihu.com/people/Jack--Cui/activities">知乎</a></li>
+</ul>
+</li>
+</ul></div>					</nav><!-- #site-nav -->
+				</div><!-- #site-nav-wrap -->
+				<div class="clear"></div>
+			</div><!-- #top-menu -->
+		</div><!-- #menu-box -->
+	</div><!-- #menu-box -->
+</header><!-- #masthead -->
+<div id="search-main">
+	<div class="searchbar">
+	<form method="get" id="searchform" action="http://cuijiahua.com/">
+		<span class="search-input">
+			<input type="text" value="" name="s" id="s" placeholder="输入搜索内容" required />
+			<button type="submit" id="searchsubmit"><i class="be be-search"></i></button>
+		</span>
+				<span class="search-cat">
+						<select  name='cat' id='cat' class='postform' >
+	<option value='0' selected='selected'>全部分类</option>
+	<option class="level-0" value="2">技术分享</option>
+	<option class="level-0" value="3">机器学习</option>
+	<option class="level-0" value="4">网络爬虫</option>
+	<option class="level-0" value="5">程序生活</option>
+	<option class="level-0" value="13">网站建设</option>
+	<option class="level-0" value="63">剑指Offer</option>
+	<option class="level-0" value="87">深度学习</option>
+	<option class="level-0" value="94">算法学习</option>
+	<option class="level-0" value="95">算法基础</option>
+	<option class="level-0" value="124">首页幻灯</option>
+	<option class="level-0" value="154">小把戏录</option>
+</select>
+		</span>
+			</form>
+</div>
+		<div class="searchbar">
+		<form method="get" id="baiduform" action="http://cuijiahua.com/baidu.html" target="_blank">
+			<span class="search-input">
+				<input type="hidden" value="1" name="entry">
+				<input class="swap_value" placeholder="输入百度站内搜索关键词" name="q">
+				<button type="submit" id="searchbaidu"><i class="be be-baidu"></i></button>
+			</span>
+		</form>
+	</div>
+	
+	
+		<div class="clear"></div>
+</div>		<nav class="breadcrumb">
+		<div class="bull"><i class="be be-volumedown"></i></div><div id="scrolldiv">
+	<div class="scrolltext">
+		<ul>
+						<li class="scrolltext-title"><a href="http://cuijiahua.com/blog/bulletin/qq.html" rel="bookmark">添加QQ第三方登陆</a></li>								</ul>
+	</div>
+</div>
+<script type="text/javascript">$(document).ready(function() {$("#scrolldiv").textSlider({line: 1, speed: 300, timer: 6000});})</script>					</nav>
+		
+	
+	<div id="content" class="site-content">
+
+<div id="primary" class="content-area"><main id="main" class="site-main" role="main"><div id="slideshow"  class="wow fadeInUp" data-wow-delay="0.3s">
+	<ul class="rslides" id="slider">
+																<li>
+								<a href="http://cuijiahua.com/liuyan.html" target="_blank" rel="external nofollow"><img src="http://photos.cuijiahua.com/website/huandeng.png" alt="欢迎各路朋友来访-Jack Cui" /></a>
+								<p class="slider-caption">欢迎各路朋友来访-Jack Cui</p>
+			</li>
+			
+					</ul>
+</div>
+<!-- 最新文章 -->
+<div class="cms-news sort" name="2">
+			<article id="post-3254" class="wow fadeInUp post-3254 post type-post status-publish format-standard hentry category-life tag-166 tag-169 tag-167 tag-168 wzw" data-wow-delay="0.3s">
+	
+														<figure class="thumbnail">
+						<span class="load"><a href="http://cuijiahua.com/blog/2018/04/life_2.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/life_2_tese.png&w=280&h=210&a=&zc=1" alt="2018年春招实习面试经验总结" /></a></span>						<span class="cat"><a href="http://cuijiahua.com/blog/life/">程序生活</a></span>
+					</figure>
+									
+		<header class="entry-header">
+									<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/04/life_2.html" rel="bookmark">2018年春招实习面试经验总结</a></h2>						</header><!-- .entry-header -->
+
+	<div class="entry-content">
+					<div class="archive-content">
+				最近一直在参加各种面试，感觉自己面试表现很弱鸡，虽然已经有了点offer，但跟那些offer收割机比起来，差得太远。本篇文章记录了自己在面试过程中被问到的各种问题以及一些经验之谈。...			</div>
+			<span class="title-l"></span>
+										
+												<span class="entry-meta">
+						<span class="date">2018年4月10日</span><span class="views"><i class="be be-eye"></i> 1,569 °C</span><span class="comment"><a href="http://cuijiahua.com/blog/2018/04/life_2.html#comments" rel="external nofollow"><i class="be be-speechbubble"></i> 25</a></span>					</span>
+							
+				<div class="clear"></div>
+	</div><!-- .entry-content -->
+
+					<span class="entry-more"><a href="http://cuijiahua.com/blog/2018/04/life_2.html" rel="bookmark">阅读全文</a></span>
+			</article><!-- #post -->
+
+			<!-- 图文日志 -->
+					<article id="post-3301" class="wow fadeInUp post-3301 post type-post status-publish format-standard hentry category-trick tag-linux tag-swap tag-165 wzw" data-wow-delay="0.3s">
+	
+														<figure class="thumbnail">
+						<span class="load"><a href="http://cuijiahua.com/blog/2018/03/trick-5-2.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/strick_5_tese.png&w=280&h=210&a=&zc=1" alt="Linux内存不足怎么办？" /></a></span>						<span class="cat"><a href="http://cuijiahua.com/blog/trick/">小把戏录</a></span>
+					</figure>
+									
+		<header class="entry-header">
+									<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/03/trick-5-2.html" rel="bookmark">Linux内存不足怎么办？</a></h2>						</header><!-- .entry-header -->
+
+	<div class="entry-content">
+					<div class="archive-content">
+				在做嵌入式开发的时候，常常会遇到一些因为内存不足而导致编译失败的情况，这种情况应该如何解决呢？			</div>
+			<span class="title-l"></span>
+										
+												<span class="entry-meta">
+						<span class="date">2018年3月31日</span><span class="views"><i class="be be-eye"></i> 278 °C</span><span class="comment"><a href="http://cuijiahua.com/blog/2018/03/trick-5-2.html#comments" rel="external nofollow"><i class="be be-speechbubble"></i> 2</a></span>					</span>
+							
+				<div class="clear"></div>
+	</div><!-- .entry-content -->
+
+					<span class="entry-more"><a href="http://cuijiahua.com/blog/2018/03/trick-5-2.html" rel="bookmark">阅读全文</a></span>
+			</article><!-- #post -->
+
+				<!-- 广告 -->
+				<article id="post-3240" class="wow fadeInUp post-3240 post type-post status-publish format-standard hentry category-spider tag-162 tag-8 tag-163 wzw" data-wow-delay="0.3s">
+	
+														<figure class="thumbnail">
+						<span class="load"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/spider_5_tese.png&w=280&h=210&a=&zc=1" alt="爬虫进阶教程：抖音APP无水印视频批量下载" /></a></span>						<span class="cat"><a href="http://cuijiahua.com/blog/spider/">网络爬虫</a></span>
+					</figure>
+									
+		<header class="entry-header">
+									<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html" rel="bookmark">爬虫进阶教程：抖音APP无水印视频批量下载</a></h2>						</header><!-- .entry-header -->
+
+	<div class="entry-content">
+					<div class="archive-content">
+				好久没有写文章了，因为最近一直备受小论文的折磨，今天小论文初稿终于写差不多了。看着好几天都没有更新的网站有些心疼，翻了翻爬虫代码存货，决定把抖音APP视频批量下载的代码拿出来水个文...			</div>
+			<span class="title-l"></span>
+										
+												<span class="entry-meta">
+						<span class="date">2018年3月19日</span><span class="views"><i class="be be-eye"></i> 6,266 °C</span><span class="comment"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html#comments" rel="external nofollow"><i class="be be-speechbubble"></i> 25</a></span>					</span>
+							
+				<div class="clear"></div>
+	</div><!-- .entry-content -->
+
+					<span class="entry-more"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html" rel="bookmark">阅读全文</a></span>
+			</article><!-- #post -->
+
+			<article id="post-3214" class="wow fadeInUp post-3214 post type-post status-publish format-standard hentry category-trick tag-anaconda tag-jupyter-notebook wzw" data-wow-delay="0.3s">
+	
+														<figure class="thumbnail">
+						<span class="load"><a href="http://cuijiahua.com/blog/2018/02/trick-4.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/trick_4_tese.png&w=280&h=210&a=&zc=1" alt="Jupyter Notebook使用Anaconda下的python" /></a></span>						<span class="cat"><a href="http://cuijiahua.com/blog/trick/">小把戏录</a></span>
+					</figure>
+									
+		<header class="entry-header">
+									<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/02/trick-4.html" rel="bookmark">Jupyter Notebook使用Anaconda下的python</a></h2>						</header><!-- .entry-header -->
+
+	<div class="entry-content">
+					<div class="archive-content">
+				安装好的Jupyter Notebook默认是无法选择Anaconda下的python创建文件的，要想支持，需要进行一下小小的配置。			</div>
+			<span class="title-l"></span>
+										
+												<span class="entry-meta">
+						<span class="date">2018年2月28日</span><span class="views"><i class="be be-eye"></i> 853 °C</span><span class="comment"><a href="http://cuijiahua.com/blog/2018/02/trick-4.html#respond" rel="external nofollow"><span class="no-comment"><i class="be be-speechbubble"></i> 发表评论</span></a></span>					</span>
+							
+				<div class="clear"></div>
+	</div><!-- .entry-content -->
+
+					<span class="entry-more"><a href="http://cuijiahua.com/blog/2018/02/trick-4.html" rel="bookmark">阅读全文</a></span>
+			</article><!-- #post -->
+
+			<article id="post-3193" class="wow fadeInUp post-3193 post type-post status-publish format-standard hentry category-trick tag-bundle tag-ide tag-python tag-vim wzw" data-wow-delay="0.3s">
+	
+														<figure class="thumbnail">
+						<span class="load"><a href="http://cuijiahua.com/blog/2018/02/trick-3.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/trick_3_tese.png&w=280&h=210&a=&zc=1" alt="Linux下搭建基于python的VIM" /></a></span>						<span class="cat"><a href="http://cuijiahua.com/blog/trick/">小把戏录</a></span>
+					</figure>
+									
+		<header class="entry-header">
+									<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/02/trick-3.html" rel="bookmark">Linux下搭建基于python的VIM</a></h2>						</header><!-- .entry-header -->
+
+	<div class="entry-content">
+					<div class="archive-content">
+				不得不说，VIM大法好。			</div>
+			<span class="title-l"></span>
+										
+												<span class="entry-meta">
+						<span class="date">2018年2月27日</span><span class="views"><i class="be be-eye"></i> 510 °C</span><span class="comment"><a href="http://cuijiahua.com/blog/2018/02/trick-3.html#respond" rel="external nofollow"><span class="no-comment"><i class="be be-speechbubble"></i> 发表评论</span></a></span>					</span>
+							
+				<div class="clear"></div>
+	</div><!-- .entry-content -->
+
+					<span class="entry-more"><a href="http://cuijiahua.com/blog/2018/02/trick-3.html" rel="bookmark">阅读全文</a></span>
+			</article><!-- #post -->
+
+			<article id="post-3182" class="wow fadeInUp post-3182 post type-post status-publish format-standard hentry category-trick tag-numpy wzw" data-wow-delay="0.3s">
+	
+														<figure class="thumbnail">
+						<span class="load"><a href="http://cuijiahua.com/blog/2018/02/trick-2.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/trick_2_tese.png&w=280&h=210&a=&zc=1" alt="Numpy的transponse()函数" /></a></span>						<span class="cat"><a href="http://cuijiahua.com/blog/trick/">小把戏录</a></span>
+					</figure>
+									
+		<header class="entry-header">
+									<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/02/trick-2.html" rel="bookmark">Numpy的transponse()函数</a></h2>						</header><!-- .entry-header -->
+
+	<div class="entry-content">
+					<div class="archive-content">
+				今天看源码的时候，发现了numpy的transponse函数没有理解，特意学习记录一下。numpy.transpose()函数是对矩阵按照所需要的要求进行转置的。			</div>
+			<span class="title-l"></span>
+										
+												<span class="entry-meta">
+						<span class="date">2018年2月26日</span><span class="views"><i class="be be-eye"></i> 241 °C</span><span class="comment"><a href="http://cuijiahua.com/blog/2018/02/trick-2.html#comments" rel="external nofollow"><i class="be be-speechbubble"></i> 4</a></span>					</span>
+							
+				<div class="clear"></div>
+	</div><!-- .entry-content -->
+
+					<span class="entry-more"><a href="http://cuijiahua.com/blog/2018/02/trick-2.html" rel="bookmark">阅读全文</a></span>
+			</article><!-- #post -->
+
+		<div class="clear"></div></div>
+
+<div class="line-four sort" name="4">
+	
+	<div class="xl4 xm4">
+		<div class="picture-h wow fadeInUp" data-wow-delay="0.3s">
+			<figure class="picture-h-img">
+				<span class="load"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/spider_5_tese.png&w=280&h=210&a=&zc=1" alt="爬虫进阶教程：抖音APP无水印视频批量下载" /></a></span>				<span class="picture-inf">
+					<i class="be be-picture"></i>
+				</span>
+			</figure>
+			<h2 class="picture-h-title"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html" rel="bookmark">爬虫进阶教程：抖音APP无水印视频批量下载</a></h2>		</div>
+	</div>
+
+	
+	<div class="xl4 xm4">
+		<div class="picture-h wow fadeInUp" data-wow-delay="0.3s">
+			<figure class="picture-h-img">
+				<span class="load"><a href="http://cuijiahua.com/blog/2018/01/spider_4.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/spider_4_tese.png&w=280&h=210&a=&zc=1" alt="爬虫基础教程：实战出真知" /></a></span>				<span class="picture-inf">
+					<i class="be be-picture"></i>
+				</span>
+			</figure>
+			<h2 class="picture-h-title"><a href="http://cuijiahua.com/blog/2018/01/spider_4.html" rel="bookmark">爬虫基础教程：实战出真知</a></h2>		</div>
+	</div>
+
+	
+	<div class="xl4 xm4">
+		<div class="picture-h wow fadeInUp" data-wow-delay="0.3s">
+			<figure class="picture-h-img">
+				<span class="load"><a href="http://cuijiahua.com/blog/2018/01/spider_3.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/spider_3_tese.png&w=280&h=210&a=&zc=1" alt="爬虫进阶教程：百万英雄答题辅助系统" /></a></span>				<span class="picture-inf">
+					<i class="be be-picture"></i>
+				</span>
+			</figure>
+			<h2 class="picture-h-title"><a href="http://cuijiahua.com/blog/2018/01/spider_3.html" rel="bookmark">爬虫进阶教程：百万英雄答题辅助系统</a></h2>		</div>
+	</div>
+
+	
+	<div class="xl4 xm4">
+		<div class="picture-h wow fadeInUp" data-wow-delay="0.3s">
+			<figure class="picture-h-img">
+				<span class="load"><a href="http://cuijiahua.com/blog/2017/11/spider_2_geetest.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/spider_2_tese.jpg&w=280&h=210&a=&zc=1" alt="爬虫进阶教程：极验(GEETEST)验证码破解教程" /></a></span>				<span class="picture-inf">
+					<i class="be be-picture"></i>
+				</span>
+			</figure>
+			<h2 class="picture-h-title"><a href="http://cuijiahua.com/blog/2017/11/spider_2_geetest.html" rel="bookmark">爬虫进阶教程：极验(GEETEST)验证码破解教程</a></h2>		</div>
+	</div>
+
+			<div class="clear"></div>
+</div>
+<div class="tab-site wow fadeInUp sort" data-wow-delay="0.3s" name="10">
+	<div id="layout-tab" class="tab-product">
+	    <h2 class="tab-hd">
+		    <span class="tab-hd-con"><a href="javascript:">系列好文</a></span>
+		    <span class="tab-hd-con"><a href="javascript:">爬虫进阶</a></span>
+		    <span class="tab-hd-con"><a href="javascript:">深度学习</a></span>
+	    </h2>
+
+		<div class="tab-bd dom-display">
+
+			<ul class="tab-bd-con current">
+								<li class="list-title"><a href="http://cuijiahua.com/blog/2017/12/ml_13_regtree_1.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（十三）：树回归基础篇之CART算法与树剪枝</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2017/12/ml_12_regression_2.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（十二）：线性回归提高篇之乐高玩具套件二手价预测</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2017/11/ml_11_regression_1.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（十一）：线性回归基础篇之预测鲍鱼年龄</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2017/11/ml_10_adaboost.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（十）：提升分类器性能利器-AdaBoost</a></li>											</ul>
+
+			<ul class="tab-bd-con">
+								<li class="list-title"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html" rel="bookmark"><i class="be be-arrowright"></i>爬虫进阶教程：抖音APP无水印视频批量下载</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/spider_4.html" rel="bookmark"><i class="be be-arrowright"></i>爬虫基础教程：实战出真知</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/spider_3.html" rel="bookmark"><i class="be be-arrowright"></i>爬虫进阶教程：百万英雄答题辅助系统</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2017/11/spider_2_geetest.html" rel="bookmark"><i class="be be-arrowright"></i>爬虫进阶教程：极验(GEETEST)验证码破解教程</a></li>										    </ul>
+
+			<ul class="tab-bd-con">
+								<li class="list-title"><a href="http://cuijiahua.com/blog/2018/02/dl_6.html" rel="bookmark"><i class="be be-arrowright"></i>网络解析（二）：MoblieNets详解</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/dl_5.html" rel="bookmark"><i class="be be-arrowright"></i>Tensorflow实战（二）：Discuz验证码识别</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/dl_4.html" rel="bookmark"><i class="be be-arrowright"></i>Tensorflow实战（一）：打响深度学习的第一枪 &#8211; 手写数字识别（Tensorboard可视化）</a></li>								<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/dl_3.html" rel="bookmark"><i class="be be-arrowright"></i>网络解析（一）：LeNet-5详解</a></li>											</ul>
+
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+</main></div><div id="sidebar" class="widget-area cms-sidebar">
+	<div class="wow fadeInUp" data-wow-delay="0.5s">
+		<aside id="like_most_img-4" class="widget like_most_img wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="title-i"><span class="title-i-t"></span><span class="title-i-b"></span><span class="title-i-b"></span><span class="title-i-t"></span></span>本站推荐</h3>
+<div id="like" class="new_cat">
+	<ul>
+									<li><span class='thumbnail'><span class="load"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/spider_5_tese.png&w=280&h=210&a=&zc=1" alt="爬虫进阶教程：抖音APP无水印视频批量下载" /></a></span></span><span class="new-title"><a href="http://cuijiahua.com/blog/2018/03/spider-5.html" rel="bookmark">爬虫进阶教程：抖音APP无水印视频批量下载</a></span><span class='discuss'><i class='be be-thumbs-up-o'>&nbsp;27</i></span><span class='date'>03/19</span></li><li><span class='thumbnail'><span class="load"><a href="http://cuijiahua.com/blog/2018/04/life_2.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/life_2_tese.png&w=280&h=210&a=&zc=1" alt="2018年春招实习面试经验总结" /></a></span></span><span class="new-title"><a href="http://cuijiahua.com/blog/2018/04/life_2.html" rel="bookmark">2018年春招实习面试经验总结</a></span><span class='discuss'><i class='be be-thumbs-up-o'>&nbsp;26</i></span><span class='date'>04/10</span></li><li><span class='thumbnail'><span class="load"><a href="http://cuijiahua.com/blog/2018/02/trick-4.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/trick_4_tese.png&w=280&h=210&a=&zc=1" alt="Jupyter Notebook使用Anaconda下的python" /></a></span></span><span class="new-title"><a href="http://cuijiahua.com/blog/2018/02/trick-4.html" rel="bookmark">Jupyter Notebook使用Anaconda下的python</a></span><span class='discuss'><i class='be be-thumbs-up-o'>&nbsp;8</i></span><span class='date'>02/28</span></li><li><span class='thumbnail'><span class="load"><a href="http://cuijiahua.com/blog/2018/02/trick-3.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/trick_3_tese.png&w=280&h=210&a=&zc=1" alt="Linux下搭建基于python的VIM" /></a></span></span><span class="new-title"><a href="http://cuijiahua.com/blog/2018/02/trick-3.html" rel="bookmark">Linux下搭建基于python的VIM</a></span><span class='discuss'><i class='be be-thumbs-up-o'>&nbsp;6</i></span><span class='date'>02/27</span></li><li><span class='thumbnail'><span class="load"><a href="http://cuijiahua.com/blog/2018/03/trick-5-2.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/strick_5_tese.png&w=280&h=210&a=&zc=1" alt="Linux内存不足怎么办？" /></a></span></span><span class="new-title"><a href="http://cuijiahua.com/blog/2018/03/trick-5-2.html" rel="bookmark">Linux内存不足怎么办？</a></span><span class='discuss'><i class='be be-thumbs-up-o'>&nbsp;6</i></span><span class='date'>03/31</span></li>								</ul>
+</div>
+
+<div class="clear"></div></aside><aside id="about-2" class="widget about wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="title-i"><span class="title-i-t"></span><span class="title-i-b"></span><span class="title-i-b"></span><span class="title-i-t"></span></span>关于本站</h3>
+<div id="feed_widget">
+	<div class="feed-about">
+		<div class="about-main">
+			<div class="about-img">
+				<img src="http://photos.cuijiahua.com/website/photo.jpg" alt="name"/>
+			</div>
+			<div class="about-name">博客宗旨</div>
+			<div class="about-the">把最实用的经验，分享给最需要的读者，希望每一位来访的朋友都能有所收获！</div>
+		</div>
+		<div class="clear"></div>
+		<ul>
+			<li class="weixin">
+				<span class="tipso_style" id="tip-w" data-tipso='<span class="weixin-qr"><img src="http://photos.cuijiahua.com/website/mywexin.png" alt=" weixin"/></span>'><a title="微信"><i class="be be-weixin"></i></a></span>
+			</li>
+			<li class="tqq"><a target=blank rel="external nofollow" href=http://wpa.qq.com/msgrd?V=3&uin=406495762&Site=QQ&Menu=yes title="QQ在线"><i class="be be-qq"></i></a></li>
+			<li class="tsina"><a title="" href="https://github.com/Jack-Cherish" target="_blank" rel="external nofollow"><i class="zm zm-github"></i></a></li>
+			<li class="feed"><a title="" href="http://cuijiahua.com/feed/" target="_blank" rel="external nofollow"><i class="be be-rss"></i></a></li>
+		</ul>
+		<div class="about-inf">
+			<span class="about-pn">文章 124</span>
+			<span class="about-cn">留言 962</span>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div></aside><aside id="custom_html-10" class="widget_text widget widget_custom_html wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="title-i"><span class="title-i-t"></span><span class="title-i-b"></span><span class="title-i-b"></span><span class="title-i-t"></span></span>QQ交流群</h3><div class="textwidget custom-html-widget"><div align="center">
+	<img class="aligncenter wp-image-819 size-thumbnail" src="http://www.cuijiahua.com/wp-content/uploads/2017/11/qq-150x150.png" alt="qq群">
+</div>
+<div align="center">
+	<a href="//shang.qq.com/wpa/qunwpa?idkey=e70f3fcff3761450fda9b43eadc1910dac308a962ef9e3e87941cd2c681c4bb4" rel="nofollow">
+		<img border="0" src="http://cuijiahua.com/wp-content/uploads/2018/01/qqgroup.png" alt="Coder" title="Coder" style="max-width:100%;"></a>
+</div></div><div class="clear"></div></aside><aside id="hot_comment-7" class="widget hot_comment wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="title-i"><span class="title-i-t"></span><span class="title-i-b"></span><span class="title-i-b"></span><span class="title-i-t"></span></span>评论排行</h3>
+<div id="hot_comment_widget">
+	<ul>
+					
+<li><span class='li-icon li-icon-1'>1</span><a href= "http://cuijiahua.com/blog/2018/01/dl_5.html" rel="bookmark" title=" (79条评论)" >Tensorflow实战（二）：Discuz验证码识别</a></li>
+<li><span class='li-icon li-icon-2'>2</span><a href= "http://cuijiahua.com/blog/2017/11/ml_6_logistic_1.html" rel="bookmark" title=" (42条评论)" >机器学习实战教程（六）：Logistic回归基础篇之梯度上升算法</a></li>
+<li><span class='li-icon li-icon-3'>3</span><a href= "http://cuijiahua.com/blog/2018/01/spider_3.html" rel="bookmark" title=" (36条评论)" >爬虫进阶教程：百万英雄答题辅助系统</a></li>
+<li><span class='li-icon li-icon-4'>4</span><a href= "http://cuijiahua.com/blog/2017/10/spider_tutorial_1.html" rel="bookmark" title=" (32条评论)" >Python3网络爬虫快速入门实战解析</a></li>
+<li><span class='li-icon li-icon-5'>5</span><a href= "http://cuijiahua.com/blog/2017/11/ml_3_decision_tree_2.html" rel="bookmark" title=" (32条评论)" >机器学习实战教程（三）：决策树实战篇之为自己配个隐形眼镜</a></li>					</ul>
+</div>
+
+<div class="clear"></div></aside><aside id="recent_comments-3" class="widget recent_comments wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="title-i"><span class="title-i-t"></span><span class="title-i-b"></span><span class="title-i-b"></span><span class="title-i-t"></span></span>最新评论</h3>
+<div id="message" class="message-widget">
+	<ul>
+						<li>
+					<a href="http://cuijiahua.com/blog/2017/12/dl_1.html#anchor-comment-999" title="安装教程（一）：使用Anaconda创建caffe和tensorflow共存环境" rel="external nofollow">
+													<img alt='菜鸟' src='https://cn.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=96&r=g&default=http%3A%2F%2Fcuijiahua.com%2Fwp-content%2Fthemes%2Fbegin%2Fimg%2Favatar%2F96%2Flatin_c.png' class='avatar avatar-96 photo wpfla ' width='96' height='96' />												<span class="comment_author"><strong>菜鸟</strong></span>
+						那需要把之前安装的删掉吗，还是直接pip install caffe这样					</a>
+				</li>
+								<li>
+					<a href="http://cuijiahua.com/blog/2017/12/dl_1.html#anchor-comment-997" title="安装教程（一）：使用Anaconda创建caffe和tensorflow共存环境" rel="external nofollow">
+													<img alt='菜鸟' src='https://cn.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=96&r=g&default=http%3A%2F%2Fcuijiahua.com%2Fwp-content%2Fthemes%2Fbegin%2Fimg%2Favatar%2F96%2Flatin_c.png' class='avatar avatar-96 photo wpfla ' width='96' height='96' />												<span class="comment_author"><strong>菜鸟</strong></span>
+						博主，我也是最后import caffe时显示no modul，请问该怎么解决啊					</a>
+				</li>
+								<li>
+					<a href="http://cuijiahua.com/blog/2017/11/ml_10_adaboost.html#anchor-comment-995" title="机器学习实战教程（十）：提升分类器性能利器-AdaBoost" rel="external nofollow">
+													<img alt='keep inner peace' src='https://cn.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=96&r=g&default=http%3A%2F%2Fcuijiahua.com%2Fwp-content%2Fthemes%2Fbegin%2Fimg%2Favatar%2F96%2Flatin_k.png' class='avatar avatar-96 photo wpfla ' width='96' height='96' />												<span class="comment_author"><strong>keep inner peace</strong></span>
+						博主，我搞明白了，是这样，data_train.loc[data_train.Familysize==1,”Familysize”]=”小家庭”
+data_train.loc[(data_train.Familysize&gt;1)&amp;(data_train.Familysize1就会出错，是因为经过data_train.loc[data_train.Familysize==1,”Familysize”]=”小家庭”定义Familysize以后，Familysize里面就有了字符串变量
+”小家庭”，所以第二行就会报错					</a>
+				</li>
+								<li>
+					<a href="http://cuijiahua.com/blog/2017/11/ml_10_adaboost.html#anchor-comment-994" title="机器学习实战教程（十）：提升分类器性能利器-AdaBoost" rel="external nofollow">
+													<img alt='keep inner peace' src='https://cn.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=96&r=g&default=http%3A%2F%2Fcuijiahua.com%2Fwp-content%2Fthemes%2Fbegin%2Fimg%2Favatar%2F96%2Flatin_k.png' class='avatar avatar-96 photo wpfla ' width='96' height='96' />												<span class="comment_author"><strong>keep inner peace</strong></span>
+						博主，我搞明白了，是这样，data_train.loc[data_train.Familysize==1,"Familysize"]="小家庭"
+data_train.loc[(data_train.Familysize&gt;1)&amp;(data_train.Familysize1就会出错					</a>
+				</li>
+								<li>
+					<a href="http://cuijiahua.com/blog/2017/11/ml_10_adaboost.html#anchor-comment-992" title="机器学习实战教程（十）：提升分类器性能利器-AdaBoost" rel="external nofollow">
+													<img alt='keep inner peace' src='https://cn.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=96&r=g&default=http%3A%2F%2Fcuijiahua.com%2Fwp-content%2Fthemes%2Fbegin%2Fimg%2Favatar%2F96%2Flatin_k.png' class='avatar avatar-96 photo wpfla ' width='96' height='96' />												<span class="comment_author"><strong>keep inner peace</strong></span>
+						data_train.loc[(data_train.Familysize&gt;1)&amp;(data_train.Familysize&lt;=4),&quot;Familysize&quot;]=&quot;中等家庭&quot;，博主我不明白的是这行代码里面data_train.Familysize和1或是4不都是&quot;int&quot;类型吗？哪里有字符串类型？					</a>
+				</li>
+					</ul>
+</div>
+
+<div class="clear"></div></aside><aside id="cx_tag_cloud-5" class="widget cx_tag_cloud wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="title-i"><span class="title-i-t"></span><span class="title-i-b"></span><span class="title-i-b"></span><span class="title-i-t"></span></span>热门标签</h3>	<div class="tagcloud">
+	<a href="http://cuijiahua.com/blog/tag/svm/" class="tag-cloud-link tag-link-54 tag-link-position-1" style="font-size: 14px;">SVM</a>
+<a href="http://cuijiahua.com/blog/tag/wordpress/" class="tag-cloud-link tag-link-17 tag-link-position-2" style="font-size: 14px;">WordPress</a>
+<a href="http://cuijiahua.com/blog/tag/python/" class="tag-cloud-link tag-link-47 tag-link-position-3" style="font-size: 14px;">python</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0/" class="tag-cloud-link tag-link-118 tag-link-position-4" style="font-size: 14px;">深度学习</a>
+<a href="http://cuijiahua.com/blog/tag/%e5%ad%97%e7%ac%a6%e4%b8%b2/" class="tag-cloud-link tag-link-66 tag-link-position-5" style="font-size: 14px;">字符串</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%9c%b4%e7%b4%a0%e8%b4%9d%e5%8f%b6%e6%96%af/" class="tag-cloud-link tag-link-50 tag-link-position-6" style="font-size: 14px;">朴素贝叶斯</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%96%90%e6%b3%a2%e9%82%a3%e5%a5%91%e6%95%b0%e5%88%97/" class="tag-cloud-link tag-link-72 tag-link-position-7" style="font-size: 14px;">斐波那契数列</a>
+<a href="http://cuijiahua.com/blog/tag/%e9%98%9f%e5%88%97/" class="tag-cloud-link tag-link-70 tag-link-position-8" style="font-size: 14px;">队列</a>
+<a href="http://cuijiahua.com/blog/tag/%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab/" class="tag-cloud-link tag-link-8 tag-link-position-9" style="font-size: 14px;">网络爬虫</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%8e%92%e5%ba%8f/" class="tag-cloud-link tag-link-96 tag-link-position-10" style="font-size: 14px;">排序</a>
+<a href="http://cuijiahua.com/blog/tag/%e4%ba%8c%e5%8f%89%e6%a0%91/" class="tag-cloud-link tag-link-68 tag-link-position-11" style="font-size: 14px;">二叉树</a>
+<a href="http://cuijiahua.com/blog/tag/%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be/" class="tag-cloud-link tag-link-71 tag-link-position-12" style="font-size: 14px;">二分查找</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%95%b0%e7%bb%84/" class="tag-cloud-link tag-link-65 tag-link-position-13" style="font-size: 14px;">数组</a>
+<a href="http://cuijiahua.com/blog/tag/%e9%93%be%e8%a1%a8/" class="tag-cloud-link tag-link-67 tag-link-position-14" style="font-size: 14px;">链表</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%a0%91/" class="tag-cloud-link tag-link-77 tag-link-position-15" style="font-size: 14px;">树</a>
+<a href="http://cuijiahua.com/blog/tag/%e7%be%8e%e5%8c%96/" class="tag-cloud-link tag-link-123 tag-link-position-16" style="font-size: 14px;">美化</a>
+<a href="http://cuijiahua.com/blog/tag/tensorflow/" class="tag-cloud-link tag-link-91 tag-link-position-17" style="font-size: 14px;">tensorflow</a>
+<a href="http://cuijiahua.com/blog/tag/sklearn/" class="tag-cloud-link tag-link-48 tag-link-position-18" style="font-size: 14px;">sklearn</a>
+<a href="http://cuijiahua.com/blog/tag/%e5%86%b3%e7%ad%96%e6%a0%91/" class="tag-cloud-link tag-link-49 tag-link-position-19" style="font-size: 14px;">决策树</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0/" class="tag-cloud-link tag-link-9 tag-link-position-20" style="font-size: 14px;">机器学习</a>
+<a href="http://cuijiahua.com/blog/tag/%e5%89%91%e6%8c%87offer/" class="tag-cloud-link tag-link-64 tag-link-position-21" style="font-size: 14px;">剑指Offer</a>
+<a href="http://cuijiahua.com/blog/tag/%e7%89%b9%e6%95%88/" class="tag-cloud-link tag-link-23 tag-link-position-22" style="font-size: 14px;">特效</a>
+<a href="http://cuijiahua.com/blog/tag/%e6%a0%88/" class="tag-cloud-link tag-link-69 tag-link-position-23" style="font-size: 14px;">栈</a>
+<a href="http://cuijiahua.com/blog/tag/%e7%bd%97%e8%be%91%e5%9b%9e%e5%bd%92/" class="tag-cloud-link tag-link-51 tag-link-position-24" style="font-size: 14px;">罗辑回归</a>	<div class="clear"></div>
+
+	</div>
+
+<div class="clear"></div></aside><aside id="php_text-2" class="widget php_text wow fadeInUp" data-wow-delay="0.3s"><div class="textwidget widget-text"><script type="text/javascript">box_width=$("#cx_tag_cloud-4").width();len=$(".tagcloud a").length-1;$(".tagcloud a").each(function(i){var let=new Array('c3010a','31ac76','ea4563','31a6a0','8e7daa','4fad7b','f99f13','f85200','666666');var random1=Math.floor(Math.random()*9)+0;var num=Math.floor(Math.random()*6+9);$(this).attr('style','background:#'+let[random1]+'');if($(this).next().length>0){last=$(this).next().position().left}});</script>
+<style type="text/css">
+.tagcloud a{color:#fff;}
+#php_text-2{display:none;}
+.tagcloud {padding: 10px 0 10px 10px;}.tagcloud a {padding-right:5px;
+padding-left:5px;
+overflow:hidden;
+display:block;
+width:100px;
+height:30px;}
+</style></div><div class="clear"></div></aside>	</div>
+</div>
+<div class="clear"></div><div id="below-main"><div class="line-big sort" name="15">
+					
+	<div class="xl3 xm3">
+		<div class="cat-box wow fadeInUp" data-wow-delay="0.3s">
+			<h3 class="cat-title"><a href="http://cuijiahua.com/blog/ml/"><span class="title-i"><span></span><span></span><span></span><span></span></span>机器学习<span class="more-i"><span></span><span></span><span></span></span></a></h3>
+			<div class="clear"></div>
+			<div class="cat-site">
+															<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2017/12/ml_13_regtree_1.html" rel="bookmark">机器学习实战教程（十三）：树回归基础篇之CART算法与树剪枝</a></h2>						<div class="cat-img-small">
+							<figure class="thumbnail"><span class="load"><a href="http://cuijiahua.com/blog/2017/12/ml_13_regtree_1.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/ml_13_tese.jpg&w=280&h=210&a=&zc=1" alt="机器学习实战教程（十三）：树回归基础篇之CART算法与树剪枝" /></a></span></figure>
+							<div class="cat-main">
+								本篇文章将会讲解CART算法的实现和树的剪枝方法，通过测试不同的数据集，学习CART算法和树剪枝技术。							</div>
+						</div>
+									
+				<div class="clear"></div>
+
+				<ul class="cat-list">
+																
+																		<li class="list-date">12/08</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2017/12/ml_12_regression_2.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（十二）：线性回归提高篇之乐高玩具套件二手价预测</a></li>																								<li class="list-date">11/19</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2017/11/ml_11_regression_1.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（十一）：线性回归基础篇之预测鲍鱼年龄</a></li>																								<li class="list-date">11/16</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2017/11/ml_10_adaboost.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（十）：提升分类器性能利器-AdaBoost</a></li>																								<li class="list-date">11/15</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2017/11/ml_9_svm_2.html" rel="bookmark"><i class="be be-arrowright"></i>机器学习实战教程（九）：支持向量机实战篇之再撕非线性SVM</a></li>																				</ul>
+			</div>
+		</div>
+	</div>
+					
+	<div class="xl3 xm3">
+		<div class="cat-box wow fadeInUp" data-wow-delay="0.3s">
+			<h3 class="cat-title"><a href="http://cuijiahua.com/blog/algorithm/algorithm/"><span class="title-i"><span></span><span></span><span></span><span></span></span>算法基础<span class="more-i"><span></span><span></span><span></span></span></a></h3>
+			<div class="clear"></div>
+			<div class="cat-site">
+															<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/01/alogrithm_10.html" rel="bookmark">算法基础：BFS和DFS的直观解释</a></h2>						<div class="cat-img-small">
+							<figure class="thumbnail"><span class="load"><a href="http://cuijiahua.com/blog/2018/01/alogrithm_10.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://photos.cuijiahua.com/tese/alogrithm_10_tese.png&w=280&h=210&a=&zc=1" alt="算法基础：BFS和DFS的直观解释" /></a></span></figure>
+							<div class="cat-main">
+								我们首次接触 BFS 和 DFS 时，应该是在数据结构课上讲的 “图的遍历”。那么，这两者“遍历” 的序列到底有何差别？本篇文章就单纯来讲讲它们的区别和各自的应用，不会涉及任何代码。							</div>
+						</div>
+									
+				<div class="clear"></div>
+
+				<ul class="cat-list">
+																
+																		<li class="list-date">01/05</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/alogrithm_9.html" rel="bookmark"><i class="be be-arrowright"></i>程序员内功：八大排序算法</a></li>																								<li class="list-date">01/04</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/algorithm_8.html" rel="bookmark"><i class="be be-arrowright"></i>排序（8）：基数排序</a></li>																								<li class="list-date">01/03</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/algorithm_7.html" rel="bookmark"><i class="be be-arrowright"></i>排序（7）：归并排序</a></li>																								<li class="list-date">01/02</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/algorithm_6.html" rel="bookmark"><i class="be be-arrowright"></i>排序（6）：堆排序</a></li>																				</ul>
+			</div>
+		</div>
+	</div>
+					
+	<div class="xl3 xm3">
+		<div class="cat-box wow fadeInUp" data-wow-delay="0.3s">
+			<h3 class="cat-title"><a href="http://cuijiahua.com/blog/learing-algorithm/basis/"><span class="title-i"><span></span><span></span><span></span><span></span></span>剑指Offer<span class="more-i"><span></span><span></span><span></span></span></a></h3>
+			<div class="clear"></div>
+			<div class="cat-site">
+															<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/02/basis_67.html" rel="bookmark">剑指Offer系列刷题笔记汇总</a></h2>						<div class="cat-img-small">
+							<figure class="thumbnail"><span class="load"><a href="http://cuijiahua.com/blog/2018/02/basis_67.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://cuijiahua.com/wp-content/uploads/2018/02/basis_67_tese.png&w=280&h=210&a=&zc=1" alt="剑指Offer系列刷题笔记汇总" /></a></span></figure>
+							<div class="cat-main">
+								刷题刷的比较慢，花费了两个多月，终于将所有题目过了一遍，牛客网一共有66道题，这次刷题主要使用C++，接下来会使用Python重新过一遍，并对这些写过的文章进行更新。							</div>
+						</div>
+									
+				<div class="clear"></div>
+
+				<ul class="cat-list">
+																
+																		<li class="list-date">02/03</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/02/basis_66.html" rel="bookmark"><i class="be be-arrowright"></i>剑指Offer（六十六）：机器人的运动范围</a></li>																								<li class="list-date">02/03</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/02/basis_65.html" rel="bookmark"><i class="be be-arrowright"></i>剑指Offer（六十五）：矩阵中的路径</a></li>																								<li class="list-date">02/02</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/02/basis_64.html" rel="bookmark"><i class="be be-arrowright"></i>剑指Offer（六十四）：滑动窗口的最大值</a></li>																								<li class="list-date">02/01</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/02/basis_63.html" rel="bookmark"><i class="be be-arrowright"></i>剑指Offer（六十三）：数据流中的中位数</a></li>																				</ul>
+			</div>
+		</div>
+	</div>
+					
+	<div class="xl3 xm3">
+		<div class="cat-box wow fadeInUp" data-wow-delay="0.3s">
+			<h3 class="cat-title"><a href="http://cuijiahua.com/blog/website/"><span class="title-i"><span></span><span></span><span></span><span></span></span>网站建设<span class="more-i"><span></span><span></span><span></span></span></a></h3>
+			<div class="clear"></div>
+			<div class="cat-site">
+															<h2 class="entry-title"><a href="http://cuijiahua.com/blog/2018/01/website_15.html" rel="bookmark">网站美化：为阅读全文字样添加特效</a></h2>						<div class="cat-img-small">
+							<figure class="thumbnail"><span class="load"><a href="http://cuijiahua.com/blog/2018/01/website_15.html"><img src="http://cuijiahua.com/wp-content/themes/begin/img/loading.png" data-original="http://cuijiahua.com/wp-content/themes/begin/timthumb.php?src=http://cuijiahua.com/wp-content/uploads/2018/01/website_15_tese.png&w=280&h=210&a=&zc=1" alt="网站美化：为阅读全文字样添加特效" /></a></span></figure>
+							<div class="cat-main">
+								直入主题，为阅读全文这个字样添加进出特效。							</div>
+						</div>
+									
+				<div class="clear"></div>
+
+				<ul class="cat-list">
+																
+																		<li class="list-date">01/19</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/website_14.html" rel="bookmark"><i class="be be-arrowright"></i>网站美化：为导航菜单添加特效</a></li>																								<li class="list-date">01/19</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/website_13.html" rel="bookmark"><i class="be be-arrowright"></i>网站美化：幻灯片和缩略图添加圆框边效果</a></li>																								<li class="list-date">01/19</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/website_12.html" rel="bookmark"><i class="be be-arrowright"></i>网站美化：文章列表和侧边栏添加选中效果</a></li>																								<li class="list-date">01/19</li>
+							<li class="list-title"><a href="http://cuijiahua.com/blog/2018/01/website_11.html" rel="bookmark"><i class="be be-arrowright"></i>网站美化：评论嵌套太多导致手机端显示丑陋解决办法</a></li>																				</ul>
+			</div>
+		</div>
+	</div>
+		<div class="clear"></div>
+</div>
+</div>
+	</div><!-- .site-content -->
+	<div class="clear"></div>
+			
+<div class="links-box">
+	<div id="links">
+					<ul class="lx7"><li class="link-f link-name wow fadeInUp" data-wow-delay="0.3s"><a href="http://blog.ihuxu.com/" target="_blank">胡小旭</a></li></ul>
+						<div class="clear"></div>
+	</div>
+</div>
+		<div id="footer-widget-box" class="site-footer">
+	<div class="footer-widget">
+		<aside id="nav_menu-2" class="widget widget_nav_menu wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="s-icon"></span>更多精彩</h3><div class="menu-%e6%9b%b4%e5%a4%9a%e7%b2%be%e5%bd%a9-container"><ul id="menu-%e6%9b%b4%e5%a4%9a%e7%b2%be%e5%bd%a9" class="menu"><li id="menu-item-827" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-827"><a href="http://cuijiahua.com/blog/ml/"><i class="zm zm-jiqixuexi"></i><span class="font-text">机器学习</span></a></li>
+<li id="menu-item-2001" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2001"><a href="http://cuijiahua.com/blog/dl/"><i class="zm zm-shenduxuexi"></i><span class="font-text">深度学习</span></a></li>
+<li id="menu-item-828" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-828"><a href="http://cuijiahua.com/blog/spider/"><i class="zm zm-spider"></i><span class="font-text">网络爬虫</span></a></li>
+<li id="menu-item-826" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-826"><a href="http://cuijiahua.com/blog/website/"><i class="zm zm-wordpress"></i><span class="font-text">网站建设</span></a></li>
+<li id="menu-item-2957" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2957"><a href="http://cuijiahua.com/blog/learing-algorithm/"><i class="zm zm-code"></i><span class="font-text">算法学习</span></a></li>
+<li id="menu-item-829" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-829"><a href="http://cuijiahua.com/blog/life/"><i class="zm zm-shenghuo"></i><span class="font-text">程序生活</span></a></li>
+<li id="menu-item-1455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1455"><a href="http://cuijiahua.com/sitemap.html"><i class="zm zm-sitemap"></i><span class="font-text">博客地图</span></a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2958"><a href="http://cuijiahua.com/sponsor.html"><i class="zm zm-aixinxindiantu"></i><span class="font-text">赞助本站</span></a></li>
+<li id="menu-item-1619" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1619"><a href="http://cuijiahua.com/about.html"><i class="zm zm-about"></i><span class="font-text">博客简介</span></a></li>
+</ul></div><div class="clear"></div></aside><aside id="text-2" class="widget widget_text wow fadeInUp" data-wow-delay="0.3s"><h3 class="widget-title"><span class="s-icon"></span>关于本站</h3>			<div class="textwidget"><p>Jack Cui博客是关注互联网以及分享人工智能相关知识的个人博客，主要涵盖了网络爬虫、机器学习、深度学习等经验教程。我的博客宗旨：把最实用的经验，分享给最需要的读者，希望每一个来访的朋友都能有所收获！</p>
+</div>
+		<div class="clear"></div></aside><aside id="custom_html-13" class="widget_text widget widget_custom_html wow fadeInUp" data-wow-delay="0.3s"><div class="textwidget custom-html-widget"><div id="jack">
+</div>
+<script>
+var jack = function (r) {
+    function t() {
+        return b[Math.floor(Math.random() * b.length)]
+    }
+    function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+    }
+    function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+            var l = document.createElement("span");
+            l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+    }
+    function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+    }
+    /*以下内容自定义修改*/
+    var l = "I work with",
+        o = [" Python.", " C/C++.", " ML/DL.", " Spider."].map(function (r) 
+        {
+            return r + ""
+        }), a = 2, g = 1, s = 5, d = 75,
+        b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+        c = {text: "", prefixP: -s, skillI: 0, skillP: 0, direction: "forward", delay: a, step: g};
+    i()
+};
+jack(document.getElementById('jack'));
+</script>
+<div >
+	<a href="http://cuijiahua.com" >
+		<img src="http://cuijiahua.com/wp-content/uploads/2018/01/footer_1_120.gif" alt="卖萌">
+	</a>
+</div></div><div class="clear"></div></aside>		<div class="clear"></div>
+	</div>
+</div>
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			Copyright © 2017-2018 <a href="http://cuijiahua.com">Jack Cui博客</a> 保留所有权利 <img src="http://cuijiahua.com/wp-content/uploads/2018/01/icp.png" alt="" width="18" height="19" /> <a style="text-indent: 2em;" href="http://www.miitbeian.gov.cn" target="_blank" rel="noopener nofollow noreferrer">辽ICP备17017404号-1</a>			<!--自定义查询-->
+			<!--
+			 | 耗时 0.686 秒 | 查询 228 次 | 内存 38.39 MB			-->
+			<!--自定义结束-->
+			<span class="add-info">
+                        <!--添加自定义运行时间-->
+                        博客稳定运行：<SPAN id=span_dt_dt style="color: #2F889A;"></SPAN> <SCRIPT language=javascript>function show_date_time(){
+                        window.setTimeout("show_date_time()", 1000);
+                        BirthDay=new Date("10/1/2017 0:0:0");
+                        today=new Date();
+                        timeold=(today.getTime()-BirthDay.getTime());
+                        sectimeold=timeold/1000
+                        secondsold=Math.floor(sectimeold);
+                        msPerDay=24*60*60*1000
+                        e_daysold=timeold/msPerDay
+                        daysold=Math.floor(e_daysold);
+                        e_hrsold=(e_daysold-daysold)*24;
+                        hrsold=Math.floor(e_hrsold);
+                        e_minsold=(e_hrsold-hrsold)*60;
+                        minsold=Math.floor((e_hrsold-hrsold)*60);
+                        seconds=Math.floor((e_minsold-minsold)*60);
+                        span_dt_dt.innerHTML='<font style=color:#C40000>'+daysold+'</font> 天 <font style=color:#C40000>'+hrsold+'</font> 时 <font style=color:#C40000>'+minsold+'</font> 分 <font style=color:#C40000>'+seconds+'</font> 秒';
+                        }
+                        show_date_time();</script>
+<!--自定义运行时间结束-->
+								<!-- 百度统计  -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f643ef522aa682d0bae0feaa53dfbce3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script src="https://s19.cnzz.com/z_stat.php?id=1271483757&web_id=1271483757" language="JavaScript"></script>			</span>
+		</div><!-- .site-info -->
+				<div class="footer-clear"></div>
+		<nav class="footer-nav">
+		<div class="menu-%e7%a7%bb%e5%8a%a8%e7%ab%af%e5%ba%95%e9%83%a8%e8%8f%9c%e5%8d%95-container"><ul id="menu-%e7%a7%bb%e5%8a%a8%e7%ab%af%e5%ba%95%e9%83%a8%e8%8f%9c%e5%8d%95" class="footer-menu"><li id="menu-item-2250" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-2250"><a href="http://cuijiahua.com"><i class="zm zm-home"></i><span class="font-text">首页</span></a></li>
+<li id="menu-item-2951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2951"><a href="http://cuijiahua.com/sponsor.html"><i class="zm zm-aixinxindiantu"></i><span class="font-text">赞赏</span></a></li>
+<li id="menu-item-2252" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2252"><a href="http://cuijiahua.com/liuyan.html"><i class="zm zm-plumage"></i><span class="font-text">留言</span></a></li>
+<li id="menu-item-2667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2667"><a href="http://cuijiahua.com/about.html"><i class="zm zm-about"></i><span class="font-text">简介</span></a></li>
+</ul></div>		</nav>
+			</footer><!-- .site-footer -->
+<!--自定义添加开始-->
+<script src="http://cuijiahua.com/wp-content/themes/begin/js/activate-power-mode.js"></script>
+<script>  
+POWERMODE.colorful = true;  // 冒光特效  
+POWERMODE.shake = false;    // 抖动特效  
+document.body.addEventListener('input', POWERMODE); // 为所有 input 标签都加上特效  
+</script>
+<!--<script type="text/javascript">
+//鼠标特效 
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("AI", "ML", "KNN", "LR", "DT", "NB" ,"SVM", "GDBT", "XGBOOST", "DL", "CNN", "DNN", "RNN");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+</script>-->
+<script type="text/javascript">
+/* 文章标题平移效果*/
+jQuery(document).ready(function($){
+$('.list-title a ,.entry-title a,.nav-single a,.widget ul li a').hover(function() {
+$(this).stop().animate({'left': '10px'}, 'fast');
+}, function() {
+$(this).stop().animate({'left': '0px'}, 'fast');
+});
+});
+</script>
+<!--自定义添加结束-->
+<div id="login">
+	
+	<div id="login-tab" class="login-tab-product fadeInDown animated">
+	    <h2 class="login-tab-hd">
+			<span class="login-tab-hd-con"><a href="javascript:">登录</a></span>
+							<span class="login-tab-hd-con"><a href="javascript:">注册</a></span>
+						<span class="login-tab-hd-con"><a href="javascript:">找回密码</a></span>	    </h2>
+	
+		<div class="login-tab-bd login-dom-display">
+			<div class="login-tab-bd-con login-current">
+				<div id="tab1_login" class="tab_content_login">
+					<form method="post" action="http://cuijiahua.com/wp-login.php" class="wp-user-form">
+						<div class="username">
+							<label for="user_login">用户名</label>
+							<input type="text" name="log" value="" size="20" id="user_login" tabindex="11" />
+						</div>
+						<div class="password">
+							<label for="user_pass">密码</label>
+							<input type="password" name="pwd" value="" size="20" id="user_pass" tabindex="12" />
+						</div>
+						<div class="login-form">	<style>
+	#qqworld-passport-container {
+		padding: 0 0 10px;
+	}
+	#qqworld-passport-container .third-party-login-label {
+		margin-bottom: 5px;
+	}
+	#qqworld-passport-container a {
+		display: inline-block;
+		padding: 5px;
+		background: #f7f7f7;
+		border: 1px solid #d4d4d4;
+		border-radius: 3px;
+		width: 32px;
+		height: 32px;
+		position: relative;
+		box-sizing: initial;
+		left: 0;
+		top: 0;
+	}
+	#qqworld-passport-container a:hover {
+		background: #fff;
+	}
+	#qqworld-passport-container img {
+		width: 32px;
+		height: 32px;
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+		<div id="qqworld-passport-container">
+		<p class="third-party-login-label"><label>第三方登录</label></p>
+		<p>		<a class="qq loginbtn" href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101456706&redirect_uri=http%3A%2F%2Fcuijiahua.com%2Fwp-json%2Fqqworld-passport%2Fv1%2Fmodule%2Fqq&scope=get_user_info,list_album,upload_pic,do_like&state=42ebdce2d2ee3ead79b0c3482558e0ad" title="QQ登录"><img src="http://cuijiahua.com/wp-content/plugins/qqworld-passport/images/icons/qq.png" width="32" height="32" /></a>
+</p>
+	</div>
+	</div>
+						<div class="login_fields">
+							<div class="rememberme">
+								<label for="rememberme">
+									<input type="checkbox" name="rememberme" value="forever" checked="checked" id="rememberme" tabindex="13" />记住我的登录信息								</label>
+							</div>
+							<input type="submit" name="user-submit" value="登录" tabindex="14" class="user-submit" />
+							<input type="hidden" name="redirect_to" value="/" />
+							<input type="hidden" name="user-cookie" value="1" />
+						</div>
+					</form>
+				</div>
+			</div>
+
+												<div class="login-tab-bd-con reg-url">
+						<a href="http://cuijiahua.com/register.html" target="_blank">立即注册</a>						<p class="message">点击“立即注册”转到用户注册页面。</p>
+					</div>
+							
+						<div class="login-tab-bd-con">
+				<div id="tab3_login" class="tab_content_login">
+					<p class="message">输入用户名或电子邮箱地址，您会收到一封新密码链接的电子邮件。</p>
+					<form method="post" action="http://cuijiahua.com/wp-login.php?action=lostpassword" class="wp-user-form">
+						<div class="username">
+							<label for="user_login" class="hide">用户名或电子邮件地址</label>
+							<input type="text" name="user_login" value="" size="20" id="user_login" tabindex="1001" />
+						</div>
+						<div class="login_fields">
+							<div class="login-form">	<style>
+	#qqworld-passport-container {
+		padding: 0 0 10px;
+	}
+	#qqworld-passport-container .third-party-login-label {
+		margin-bottom: 5px;
+	}
+	#qqworld-passport-container a {
+		display: inline-block;
+		padding: 5px;
+		background: #f7f7f7;
+		border: 1px solid #d4d4d4;
+		border-radius: 3px;
+		width: 32px;
+		height: 32px;
+		position: relative;
+		box-sizing: initial;
+		left: 0;
+		top: 0;
+	}
+	#qqworld-passport-container a:hover {
+		background: #fff;
+	}
+	#qqworld-passport-container img {
+		width: 32px;
+		height: 32px;
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+		<div id="qqworld-passport-container">
+		<p class="third-party-login-label"><label>第三方登录</label></p>
+		<p>		<a class="qq loginbtn" href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101456706&redirect_uri=http%3A%2F%2Fcuijiahua.com%2Fwp-json%2Fqqworld-passport%2Fv1%2Fmodule%2Fqq&scope=get_user_info,list_album,upload_pic,do_like&state=ebe6ce5c99721f8cb7c08e30105b3e6a" title="QQ登录"><img src="http://cuijiahua.com/wp-content/plugins/qqworld-passport/images/icons/qq.png" width="32" height="32" /></a>
+</p>
+	</div>
+	</div>
+							<input type="submit" name="user-submit" value="获取新密码" class="user-submit" tabindex="1002" />
+														<input type="hidden" name="redirect_to" value="/?reset=true" />
+							<input type="hidden" name="user-cookie" value="1" />
+						</div>
+					</form>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	</div><ul id="scroll">
+	<li class="log log-no"><a class="log-button" title="文章目录"><i class="be be-menu"></i></a><div class="log-prompt"><div class="log-arrow">文章目录</div></div></li>
+		<li><a class="scroll-h" title="返回顶部"><i class="be be-arrowup"></i></a></li>
+		<li><a class="scroll-b" title="转到底部"><i class="be be-arrowdown"></i></a></li>
+	<li class="gb2-site"><a id="gb2big5"><span>繁</span></a></li>				<li class="qr-site"><a href="javascript:void(0)" class="qr" title="本页二维码"><i class="be be-qr-code"></i><span class="qr-img"><span id="output"><img class="alignnone" src="http://photos.cuijiahua.com/website/mywexin.png" alt="icon"/></span><span class="arrow arrow-z"><i class="be be-playarrow"></i></span><span class="arrow arrow-y"><i class="be be-playarrow"></i></span></span></a></li>
+		<script type="text/javascript">$(document).ready(function(){if(!+[1,]){present="table";} else {present="canvas";}$('#output').qrcode({render:present,text:window.location.href,width:"150",height:"150"});});</script>
+	</ul></div><!-- .site -->
+<img style="display:none" src=" " onerror='var str1="cuijiahua." + "com";str2="docu"+"ment.loca"+"tion.host";str3=eval(str2);if( str1!=str3 && str3!="cache.baiducontent.com" && str3!="webcache.googleusercontent.com" && str3!="c.360webcache.com" && str3!="snapshot.sogoucdn.com" && str3!="cncc.bingj.com" ){ do_action = "loca" + "tion." + "href = loca" + "tion.href" + ".rep" + "lace(docu" +"ment"+".loca"+"tion.ho"+"st," + "\"cuijiahua." + "com\"" + ")";eval(do_action) }' /><script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/slides.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/jquery.qrcode.min.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/sticky.js?ver=1.6.0'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/selectordie.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/jquery-ias.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/jquery.lazyload.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/tipso.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/script.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/flexisel.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/superfish.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/gb2big5.js?ver=10/01/2018'></script>
+<script type='text/javascript' src='http://cuijiahua.com/wp-content/themes/begin/js/wpzm.js?ver=10/01/2018'></script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.691 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2018-05-16 15:59:59 -->
+
+<!-- Compression = gzip -->
+<!-- super cache -->
