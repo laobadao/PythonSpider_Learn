@@ -15,6 +15,14 @@ SPIDER_MODULES = ['tutorial.spiders']
 NEWSPIDER_MODULE = 'tutorial.spiders'
 
 
+ITEM_PIPELINES = {
+	'tutorial.pipelines.TextPipeline':300,
+	'tutorial.pipelines.MongoPipeline':400
+}
+
+MONGO_URI = 'localhost'
+MONGO_DB = 'tutorial'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
 
